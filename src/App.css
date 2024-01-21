@@ -1,15 +1,16 @@
-/* App.css */
-
-/* Original styles */
+body {
+  background-color: #f0f0f03e; 
+  margin: 0; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 .App {
   text-align: center;
+  background-color: #f0f0f0; 
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 .App-header {
   background-color: #7731E4;
   padding: 20px;
@@ -18,7 +19,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .search-bar {
   margin-left: 20px;
   padding: 10px;
@@ -37,124 +37,168 @@
   margin-left: 10px;
 }
 .App-link {
-  color: #61dafb;
+  color: #7731E4;
 }
-
 .image-gallery {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
-
 .large-image {
-  max-width: 900px;
+  max-width: 1000px;
   height: 300px;
   margin-bottom: 10px;
+  margin-right: 5px; 
 }
-
 .regular-image {
   width: 200px;
   height: 300px;
   margin-bottom: 10px;
+  margin-right: 2px; 
 }
 .custom-image {
-  width: 100%; /* Adjust the width as needed */
-  max-width: 500px; /* Set a maximum width to avoid excessive stretching on larger screens */
-  height: auto; /* Maintain the aspect ratio */
-  margin: 10px; /* Adjust margins as needed */
-  display: block; /* Ensure the image behaves as a block element */
+  max-width: 50%; 
+  height: 200px;
+  margin-top: 20px; 
+  margin-right: 2000px; 
 }
-
-
-
+.side-image {
+  max-width: 50%; 
+  height: auto;
+  margin-left: 800px;
+  margin-top: -500px;
+}
 .small-map {
   width: 50%;
-  max-width: 300px;
+  max-width: 200px;
   height: 100px;
-  margin-left: 600px;
+  margin-left: 350px;
+  margin-top: -125px;
 }
-
-/* Styling for the larger map */
 .larger-map-container {
   width: 100%;
-  max-width: 800px; /* Adjust the width as needed */
-  height: 500px; /* Adjust the height as needed */
+  max-width: 800px;
+  height: 800px; 
   margin-left: 20px;
-  overflow: hidden; /* Ensure that the map doesn't overflow its container */
+  overflow: hidden;
 }
-
 .larger-map-container iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
-
-
-
-/* PropertyDetails.css */
-
-/* Style for the button */
-/* PropertyDetails.css */
-
-/* Style for the expand/collapse toggle */
 .expand-toggle {
   cursor: pointer;
   margin-left: 1px;
 }
-
-/* Add these styles to your CSS file */
 .expanded-details {
   display: flex;
   flex-direction: row;
+  
 }
-
 .details-container {
   display: flex;
-  flex-direction: row; /* Keep it as row to display content side by side */
-
+  flex-direction: row; 
 }
-
 .details-column {
     flex: 1;
     padding: 0 10px;
+    background-color: #fff;
     
   }
-/* Add these styles to your CSS file */
-
-/* PropertyDetails.css */
-
-.property-details-container {
-  margin-left: 20px; /* Adjust the margin as needed */
+.details-columns{
+  flex:1;
+  padding:0 10px;
+  background-color:#fff;
 }
-
+.property-details-container {
+  margin-left: 2px; 
+  background-color: #fff; 
+  padding: 10px 2px;
+  margin-top: -600px;
+}
 .left-aligned-heading {
+  width: 50%;
+  box-sizing: border-box; 
+  padding: 0 20px; 
+  box-shadow: 0 0 10px rgb(239, 231, 231); 
+  background-color: #fff;
   text-align: left;
 }
-
-/* Slider.css */
-
-/* Slider.css */
-.slider-container {
-  margin-bottom: 20px;
+.left-aligned-heading {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color:#fff
+ 
 }
-
-h2 {
+.left-aligned-heading h3 {
+  margin-right: 20px; 
+}
+.left-aligned-heading p {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left:-150px;
+}
+.text-container {
+  text-align: left;
+  margin-top: -100px; 
+  margin-left:1000px;
+}
+.price-text {
+  font-size: 24px;
+  font-weight: bold; 
   margin-bottom: 10px;
+  margin-left: 100px;
+  
 }
-
-rc-slider {
-  width: 80%;
-  margin: 0 auto;
+.prequalified-button {
+  padding: 10px 100px; 
+  min-width: 150px;  
+  background-color: #7731E4;  
+  color: #fff;  
+  border: none;
+  cursor: pointer;
+  border-radius: 20px; 
+  
 }
+.price-heading {
+  display: flex;
+  box-sizing: border-box; 
+  padding: 0 20px; 
+  justify-content: space-between;
+  align-items: left;
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgb(239, 231, 231); 
+  
+}
+.colour {
+  color: #7731E4; 
+}
+.details-heading {
+ background-color: #fff;
+}
+.last-image {
+  max-width: 100%; 
+  height: auto; 
+  cursor: pointer;
+}
+.custom-map{
+  width: 100%;
+  max-width: 600px;
+  height: 600px; 
 
-rc-slider-handle {
+  overflow: hidden;
+}
+.nav-button {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-span {
-  display: block;
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
-}
+
+
+
+
+
 

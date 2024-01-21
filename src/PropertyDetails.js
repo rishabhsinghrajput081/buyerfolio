@@ -1,4 +1,4 @@
-// PropertyDetails.js
+
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -37,7 +37,7 @@ const PropertyDetails = () => {
 
   return (
     <div>
-      {/* Details Toggle */}
+      
       <div className="details-heading">
         <h2 className = "left-aligned-heading" >Home Details</h2>
       </div>
@@ -51,7 +51,7 @@ const PropertyDetails = () => {
               
             </div>
             <div className="details-column">
-              <h4 className = "left-aligned-heading">Bedroom & Bathroom</h4>
+              <h4>Bedroom & Bathroom</h4>
               <p>&gt;&gt; Bedroom: 3</p>
               <p>&gt;&gt; Bathroom: 3</p>
               <p>&gt;&gt; Partial Bathrooms: 1</p>
@@ -114,7 +114,7 @@ const PropertyDetails = () => {
         </div>
       )}
 
-      {/* Property Toggle */}
+    
       <div className="details-heading">
         <h2 className = "left-aligned-heading">Property</h2>
       </div>
@@ -151,7 +151,7 @@ const PropertyDetails = () => {
         </div>
       )}
 
-      {/* Construction Toggle */}
+      
       <div className="details-heading">
         <h2 className = "left-aligned-heading">Construction</h2>
       </div>
@@ -179,7 +179,7 @@ const PropertyDetails = () => {
         </div>
       )}
 
-      {/* Utilities & Green energy Toggle */}
+     
       <div className="details-heading">
         <h2 className = "left-aligned-heading">Utilities & Green energy</h2>
       </div>
@@ -201,7 +201,7 @@ const PropertyDetails = () => {
         </div>
       )}
 
-      {/* Community and Neighborhood Toggle */}
+      
       <div className="details-heading">
         <h2 className = "left-aligned-heading">Community and Neighborhood</h2>
       </div>
@@ -226,7 +226,7 @@ const PropertyDetails = () => {
         </div>
       )}
 
-      {/* Days on Market Toggle */}
+      
       <div className="details-heading">
         <h2 className = "left-aligned-heading">Days on Market</h2>
       </div>
