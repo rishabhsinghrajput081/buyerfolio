@@ -1,10 +1,46 @@
+
+
 import React, { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBell, faBed, faBathtub, faHome, faLocation, faWalking, faBicycle, faBus } from '@fortawesome/free-solid-svg-icons';
+
+
+import {
+  faSearch,
+  faBell,
+  faBed,
+  faBathtub,
+  faHome,
+  faLocation,
+  faWalking,
+  faBicycle,
+  faBus
+} from '@fortawesome/free-solid-svg-icons';
 import ImageGallery from './ImageGallery';
 import Map from './map';
 import PropertyDetails from './PropertyDetails';
+import PropertyAllign from './PropertyAllign';
+
+const propertyData = {
+  price: '$525,000',
+  bedrooms: 3,
+  bathrooms: 1,
+  area: '1186 sq ft',
+  location: '6323 St, Jamestown, Toronto, CA',
+  overview: `Great renovation opportunity for this 3 bedroom, 1 bath home on a fenced lot. Terrazzo floors throughout, original kitchen and bathroom, indoor laundry, workshop, spacious backyard, impact windows, carport. Close to Larry and Penny Thompson Memorial Park and Campground and Zoo Miami.`,
+  walkScore: 88,
+  bikeScore: 83,
+  busScore: 70
+};
+const images = [
+  "/Mask group.png",
+  "/kitchen.png",
+  "/Rectangle.png"
+  
+];
+
+
+
 
 function App() {
   const [searchInput, setSearchInput] = useState('');
@@ -24,15 +60,12 @@ function App() {
   };
 
   const handleSearchSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    // Implement your logic to check for a match
-    // For this example, let's assume there's a list of items to search
+    event.preventDefault();
     const itemList = ['item1', 'item2', 'item3'];
 
     if (!itemList.includes(searchInput)) {
       setShowWarning(true);
     } else {
-      // Implement your logic for a successful match
       console.log('Match found:', searchInput);
       setShowWarning(false);
     }
@@ -56,54 +89,74 @@ function App() {
         </div>
         {showWarning && <p style={{ color: 'red' }}>No match found!</p>}
       </header>
-      <ImageGallery />
+      <ImageGallery images={images} />
 
       <div className="price-heading">
         <div>
-          <h4 className="colour">$525,000</h4>
+          <h4 className="colour">{propertyData.price}</h4>
           <p className="price">
-            <FontAwesomeIcon icon={faBed} className="fa-icon" /> 3 {' '}
-            <FontAwesomeIcon icon={faBathtub} className="fa-icon" /> 1{' '}
-            <FontAwesomeIcon icon={faHome} className="fa-icon" /> 1186 sq ft
+            <FontAwesomeIcon icon={faBed} className="fa-icon" /> {propertyData.bedrooms}{' '}
+            <FontAwesomeIcon icon={faBathtub} className="fa-icon" /> {propertyData.bathrooms}{' '}
+            <FontAwesomeIcon icon={faHome} className="fa-icon" /> {propertyData.area}
           </p>
           <p>
-            <FontAwesomeIcon icon={faLocation} className="fa-icon" /> 6323 St, Jamestown, Toronto, CA
+            <FontAwesomeIcon icon={faLocation} className="fa-icon" /> {propertyData.location}
           </p>
         </div>
       </div>
 
-      <Map className="small-map" />
+      <Map
+       width="300"
+       height="200"
+       className="small-map"
+       mapUrl="https://www.google.com/maps/embed?..."
+       title="Custom Map Title"
+       frameborder="0"
+       scrolling="no"
+        />
 
-      {/* Additional content below the first map */}
+ 
       <div className="text-container">
-        <p className="price-text">$ 525,000</p>
+        <p className="price-text">{propertyData.price}</p>
         <button className="prequalified-button">Get Prequalified</button>
       </div>
 
       <h4 className="left-aligned-heading">Overview</h4>
-      <p className="left-aligned-heading">
-        Great renovation opportunity for this 3 bedroom, 1 bath home on a fenced lot.<br />
-        Terrazzo floors throughout, original kitchen and bathroom, indoor laundry,<br />
-        workshop, spacious backyard, impact windows, carport. Close to Larry and Penny<br />
-        Thompson Memorial Park and Campground and Zoo Miami.
-      </p>
+      <p className="left-aligned-heading">{propertyData.overview}</p>
 
       <h4 className="left-aligned-heading">Getting Around</h4>
       <div className="left-aligned-heading">
-      <h3><FontAwesomeIcon icon={faWalking} className="fa-icon" /> Walk Score</h3>
-       <h3><FontAwesomeIcon icon={faBicycle} className="fa-icon" /> Bike Score</h3>
-       <h3><FontAwesomeIcon icon={faBus} className="fa-icon" /> Bus Score</h3>
-       <p>88/100</p>
-       <p>83/100</p>
-       <p>70/100</p>
+        <h3>
+          <FontAwesomeIcon icon={faWalking} className="fa-icon" /> Walk Score
+        </h3>
+        <h3>
+          <FontAwesomeIcon icon={faBicycle} className="fa-icon" /> Bike Score
+        </h3>
+        <h3>
+          <FontAwesomeIcon icon={faBus} className="fa-icon" /> Bus Score
+        </h3>
+        <p>{propertyData.walkScore}/100</p>
+        <p>{propertyData.bikeScore}/100</p>
+        <p>{propertyData.busScore}/100</p>
       </div>
 
       <img src="/Higlights.png" alt="Highlights" className="custom-image" />
       <img src="/MonthlyPayment.png" alt="MonthlyPayment" className="side-image" />
+      <PropertyAllign />
 
-      <PropertyDetails />
+     
       <div className="larger-map-container">
-        <Map className="custom-map" />
+        <Map  
+        
+        width="600"
+        height="400"
+        className="custom-map"
+        mapUrl="https://www.google.com/maps/embed?..."
+        title="Custom Map Title"
+        frameborder="0"
+        scrolling="no"
+      />
+      
       </div>
 
       <img
@@ -113,6 +166,7 @@ function App() {
         style={{ cursor: 'pointer' }}
         onClick={handleLastImageClick}
       />
+
     </div>
   );
 }
