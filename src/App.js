@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Slider from './Slider';
+
 
 
 import {
@@ -141,7 +143,8 @@ function App() {
       </div>
 
       <img src="/Higlights.png" alt="Highlights" className="custom-image" />
-      <img src="/MonthlyPayment.png" alt="MonthlyPayment" className="side-image" />
+     
+      <Slider/>
       <PropertyAllign />
 
      
